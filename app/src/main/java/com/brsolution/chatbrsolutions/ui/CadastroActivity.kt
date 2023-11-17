@@ -8,19 +8,28 @@ import android.widget.Toast
 import com.brsolution.chatbrsolutions.R
 import com.brsolution.chatbrsolutions.databinding.ActivityCadastroBinding
 import com.brsolution.chatbrsolutions.databinding.ActivityLoginBinding
+import com.brsolution.chatbrsolutions.model.User
 import com.brsolution.chatbrsolutions.ultis.showMessage
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
 
 class CadastroActivity : AppCompatActivity() {
 
     private lateinit var name: String
     private lateinit var email: String
     private lateinit var password: String
+
+
     private val fireBaseAuth by lazy {
         FirebaseAuth.getInstance()
+    }
+
+    private val fireStore by lazy {
+        FirebaseFirestore.getInstance()
     }
 
     private val binding by lazy {
@@ -62,8 +71,8 @@ class CadastroActivity : AppCompatActivity() {
     private fun createUser(name: String, email: String, password: String) {
         fireBaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
             if (it.isSuccessful) {
-                showMessage(getString(R.string.usuario_cadastrado_com_sucesso))
-                //startActivity(Intent(this, MainActivity::class.java))
+                val user = it.result.user?.let { it1 -> User(it1.uid, name, email, password) }
+                createUserFireStore(user)
             }
         }.addOnFailureListener {
             try {
@@ -75,6 +84,20 @@ class CadastroActivity : AppCompatActivity() {
             } catch (errorCredentialsInvalidade: FirebaseAuthInvalidCredentialsException) {
                 showMessage(getString(R.string.credenciais_invalidas))
             }
+        }
+    }
+
+    private fun createUserFireStore(user: User?) {
+        user?.let {
+            fireStore.collection(getString(R.string.firestore_usuarios))
+                .document(user.id)
+                .set(it)
+                .addOnSuccessListener {
+                    showMessage(getString(R.string.usuario_cadastrado_com_sucesso))
+                    startActivity(Intent(this, MainActivity::class.java))
+                }.addOnFailureListener {
+                    showMessage(getString(R.string.erro_cadastro_usuario))
+                }
         }
     }
 
