@@ -13,9 +13,12 @@
         android:theme="@style/Theme.ChatBrSolutions"
         tools:targetApi="31">
         <activity
-            android:parentActivityName=".ui.LoginActivity"
-            android:name=".ui.CadastroActivity"
+            android:name=".ui.PerfilActivity"
             android:exported="false" />
+        <activity
+            android:name=".ui.CadastroActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.LoginActivity" />
         <activity
             android:name=".ui.MainActivity"
             android:exported="false" />

@@ -17,7 +17,6 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var email: String
     private lateinit var password: String
 
-
     private val fireBaseAuth by lazy {
         FirebaseAuth.getInstance()
     }
@@ -30,7 +29,6 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         initEventsClicks()
-        //fireBaseAuth.signOut()
     }
 
     override fun onStart() {
@@ -72,7 +70,7 @@ class LoginActivity : AppCompatActivity() {
             )
         }.addOnFailureListener { error ->
             try {
-                throw error
+                showMessage(error.message.toString())
             } catch (errorUseInvalid: FirebaseAuthInvalidUserException) {
                 showMessage(getString(R.string.e_mail_n_o_cadastrado))
             } catch (errorUseInvalid: FirebaseAuthInvalidCredentialsException) {

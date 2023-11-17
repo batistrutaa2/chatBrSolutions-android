@@ -13,10 +13,15 @@
     <string name="senha_fraca_digite_outras_com_letras_numeros_e_caracteres_especiais">senha fraca, digite outras com letras, numeros e caracteres especiais..</string>
 
 
-
     // variaveis de ambiente
     <string name="firestore_usuarios">users</string>
     <string name="logado_com_sucesso">logado com sucesso</string>
     <string name="e_mail_n_o_cadastrado">E-mail não cadastrado..</string>
     <string name="e_mail_ou_senha_incorretos">E-mail ou senha incorretos..</string>
+    <string name="deslogar">Deslogar</string>
+    <string name="deseja_realmente_sair">Deseja Realmente sair?</string>
+    <string name="nao">NÃO</string>
+    <string name="sim">SIM</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
