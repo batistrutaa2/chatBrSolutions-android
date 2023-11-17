@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">chatBrSolutions</string>
     <string name="faca_seu_cadastro">Faça seu Cadastro</string>
+    <string name="digite_sua_senha">Digite seu senha</string>
+    <string name="digite_seu_email">Digite seu email</string>
+    <string name="digite_seu_nome">Digite seu nome</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="usuario_cadastrado_com_sucesso">Usuario Cadastrado com sucesso</string>
+    <string name="erro_cadastro_usuario">Erro ao cadastrar usuario..</string>
+    <string name="credenciais_invalidas">Credenciais Invalidas..</string>
+    <string name="usuario_ja_existente_na_base_de_dados">Usuario já existente na base de dados..</string>
+    <string name="senha_fraca_digite_outras_com_letras_numeros_e_caracteres_especiais">senha fraca, digite outras com letras, numeros e caracteres especiais..</string>
 </resources>
