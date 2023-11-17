@@ -26,7 +26,7 @@ class CadastroActivity : AppCompatActivity() {
         val toolbar = binding.includetoolBar.tbPrincipal
         setSupportActionBar(toolbar)
         supportActionBar?.apply {
-            title = "Faça seu Cadastro"
+            title = getString(R.string.faca_seu_cadastro)
             setDisplayHomeAsUpEnabled(true)
         }
     }
