@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "726688021827",
+    "project_id": "chatbrsolutions",
+    "storage_bucket": "chatbrsolutions.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:726688021827:android:5c9b6682a4e33574ad83f6",
+        "android_client_info": {
+          "package_name": "com.brsolution.chatbrsolutions"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMH_2NGeTbrDp4lz0vMML2p9mzz24AkFE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
