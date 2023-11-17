@@ -16,4 +16,7 @@
 
     // variaveis de ambiente
     <string name="firestore_usuarios">users</string>
+    <string name="logado_com_sucesso">logado com sucesso</string>
+    <string name="e_mail_n_o_cadastrado">E-mail não cadastrado..</string>
+    <string name="e_mail_ou_senha_incorretos">E-mail ou senha incorretos..</string>
 </resources>
